@@ -9,24 +9,38 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
+    <!-- Header and Responsive Navbar -->
     <header>
-        <nav class="inline-flex w-full h-[64px] bg-slate-950">
-            <ul class="float-left ml-160 mt-3 inline-flex font-inter text-stone-50">
-                <li><a href="#Home" class="text-[20px] m-2 navbar">Home</a></li>
-                <li><a href="#Profile" class="text-[20px] m-2 navbar">Our profile</a></li>
-                <li><a href="#Portofolio" class="text-[20px] m-2 navbar">Portofolio</a></li>
-                <li><a href="#MessageUs" class="text-[20px] m-2 navbar">Message Us</a></li>
+        <nav class="w-full h-[64px] bg-slate-950 flex items-center justify-between px-4 md:px-16">
+            <!-- Logo or Brand (add your logo here if needed) -->
+            <span class="text-stone-50 font-bold text-lg">PT Bakso jabaran</span>
+            <!-- Hamburger button for mobile -->
+            <button id="nav-toggle" class="md:hidden text-stone-50 focus:outline-none" aria-label="Toggle navigation">
+                <!-- Hamburger icon -->
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <!-- Navigation links -->
+            <ul id="nav-menu" class="hidden md:flex space-x-4 font-inter text-stone-50 bg-slate-950 md:bg-transparent absolute md:static top-16 left-0 w-full md:w-auto z-50 md:z-auto flex-col md:flex-row">
+                <li><a href="#Home" class="block px-4 py-2 text-[20px] m-2 navbar">Home</a></li>
+                <li><a href="#Profile" class="block px-4 py-2 text-[20px] m-2 navbar">Our profile</a></li>
+                <li><a href="#Portofolio" class="block px-4 py-2 text-[20px] m-2 navbar">Portofolio</a></li>
+                <li><a href="#MessageUs" class="block px-4 py-2 text-[20px] m-2 navbar">Message Us</a></li>
             </ul>
         </nav>
     </header>
     <hr class="bg-zinc-600 h-1">
 
+    <!-- Main Content -->
     <main class="px-4 md:px-16">
+        <!-- Home Section -->
         <section id="Home" class="mb-8">
             <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-roboto text-stone-50 text-center md:text-left">Hi, <span id="nama-welcome" class="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent font-bold"></span>, Welcome to our website!</h1>
             <p class="text-base md:text-lg text-stone-50 text-center md:text-left">This is my first website.</p>
         </section>
 
+        <!-- Profile Section -->
         <section id="Profile" class="mt-10">
             <div class="w-full md:w-[90%] mx-auto rounded-lg bg-slate-950 flex flex-col md:flex-row items-center gap-8 p-4 md:p-8" id="section1">
                 <img src="image/foto-gedung.jpg" alt="fotoprofile" class="w-full md:w-1/2 h-auto rounded-lg object-cover mb-4 md:mb-0">
@@ -47,6 +61,7 @@
             </div>
         </section>
 
+        <!-- Portfolio Section -->
         <section id="Portofolio" class="mt-10">
             <div class="w-full bg-slate-950 py-8">
                 <p class="text-2xl md:text-3xl text-stone-50 text-center mb-8">Portofolio</p>
@@ -68,6 +83,7 @@
         </section>
         <hr class="my-8">
 
+        <!-- Message Us Section -->
         <section class="mt-10" id="MessageUs">
             <h2 class="font-bold text-2xl md:text-3xl text-stone-50 font-inter mb-6 text-center md:text-left">Message Us</h2>
             <div class="flex flex-col md:flex-row gap-8">
@@ -96,9 +112,26 @@
             </div>
         </section>
     </main>
+    <!-- Footer -->
     <footer class="border-t-2 border-gray-300 bg-slate-950 text-center p-4 mt-10">
         <span class="text-stone-50">@ Created by lowen</span>
     </footer>
+    <!-- Main JS -->
     <script src="js/script.js"></script>
+    <!-- Responsive Navbar Script -->
+    <script>
+    // Toggle navbar on mobile
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('hidden');
+    });
+    // Optional: Close menu when a link is clicked (mobile UX)
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            if(window.innerWidth < 768) navMenu.classList.add('hidden');
+        });
+    });
+    </script>
 </body>
 </html>
