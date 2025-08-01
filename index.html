@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <header>
+        <nav class="inline-flex w-full h-[64px] bg-slate-950">
+            <ul class="float-left ml-160 mt-3 inline-flex font-inter text-stone-50">
+                <li><a href="#Home" class="text-[20px] m-2 navbar">Home</a></li>
+                <li><a href="#Profile" class="text-[20px] m-2 navbar">Our profile</a></li>
+                <li><a href="#Portofolio" class="text-[20px] m-2 navbar">Portofolio</a></li>
+                <li><a href="#MessageUs" class="text-[20px] m-2 navbar">Message Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr class="bg-zinc-600 h-1">
+
+    <main class="px-4 md:px-16">
+        <section id="Home" class="mb-8">
+            <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-roboto text-stone-50 text-center md:text-left">Hi, <span id="nama-welcome" class="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent font-bold"></span>, Welcome to our website!</h1>
+            <p class="text-base md:text-lg text-stone-50 text-center md:text-left">This is my first website.</p>
+        </section>
+
+        <section id="Profile" class="mt-10">
+            <div class="w-full md:w-[90%] mx-auto rounded-lg bg-slate-950 flex flex-col md:flex-row items-center gap-8 p-4 md:p-8" id="section1">
+                <img src="image/foto-gedung.jpg" alt="fotoprofile" class="w-full md:w-1/2 h-auto rounded-lg object-cover mb-4 md:mb-0">
+                <div class="flex flex-col justify-center w-full md:w-1/2">
+                    <p class="font-lato text-2xl md:text-3xl font-bold font-inter text-stone-50">Our Profile</p>
+                    <p class="font-inter text-xl md:text-2xl text-stone-50 mt-4">Visi</p>
+                    <p class="font-lato text-stone-50 mt-2">
+                        Menjadi pemimpin global dalam solusi keamanan digital dengan <br>
+                        menyediakan perlindungan yang andal, inovatif,<br>
+                        dan mudah diakses untuk semua pengguna internet.
+                    </p>
+                    <p class="font-lato text-lg md:text-xl text-stone-50 mt-6">Misi</p>
+                    <p class="font-lato text-stone-50 mt-2">
+                        Melindungi pengguna dari ancaman digital<br>
+                        melalui teknologi antivirus dan keamanan siber yang mutakhir.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="Portofolio" class="mt-10">
+            <div class="w-full bg-slate-950 py-8">
+                <p class="text-2xl md:text-3xl text-stone-50 text-center mb-8">Portofolio</p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+                    <div id="project1" class="rounded-full h-40 w-40 flex flex-col items-center justify-center bg-slate-900 p-4">
+                        <img src="image/logo_avast.png" alt="avast" class="h-20 w-20 object-contain">
+                        <p class="text-stone-50 text-lg md:text-xl font-lato mt-4">Avast AntiVirus</p>
+                    </div>
+                    <div id="project2" class="rounded-full h-40 w-40 flex flex-col items-center justify-center bg-slate-900 p-4">
+                        <img src="image/logo_avg.png" alt="avg" class="h-20 w-20 object-contain">
+                        <p class="text-stone-50 text-lg md:text-xl font-lato mt-4">AVG AntiVirus</p>
+                    </div>
+                    <div id="project3" class="rounded-full h-40 w-40 flex flex-col items-center justify-center bg-slate-900 p-4">
+                        <img src="image/logo_mb.jpeg" alt="mbam" class="h-20 w-20 object-contain">
+                        <p class="text-stone-50 text-lg md:text-xl font-lato mt-4 text-center">MalwareBytes AntiVirus</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr class="my-8">
+
+        <section class="mt-10" id="MessageUs">
+            <h2 class="font-bold text-2xl md:text-3xl text-stone-50 font-inter mb-6 text-center md:text-left">Message Us</h2>
+            <div class="flex flex-col md:flex-row gap-8">
+                <form action="" class="w-full md:w-1/2">
+                    <label for="name" class="text-stone-50 font-lato text-lg md:text-xl">Name:</label><br>
+                    <input type="text" id="name" placeholder="Enter your name" class="border-b-2 border-stone-50 rounded-md p-2 w-full mt-2 bg-stone-50"><br>
+                    <label for="date" class="text-stone-50 font-lato text-lg md:text-xl mt-4 block">Tanggal lahir:</label><br>
+                    <input type="date" id="date" class="border-2 border-stone-50 rounded-md p-2 w-full mt-2 bg-stone-50"><br>
+                    <label for="gender" class="text-stone-50 font-lato text-lg md:text-xl mt-4 block">Gender:</label><br>
+                    <select name="Gender" id="Gender" class="border-2 border-stone-50 rounded-md p-2 w-full mt-2 bg-stone-50 ">
+                        <option value="man">Male</option>
+                        <option value="female">Female</option>
+                    </select><br>
+                    <label for="message" id="message-label" class="text-stone-50 font-lato text-lg md:text-xl mt-4 block">Pesan:</label><br>
+                    <input type="text" id="message" placeholder="Enter your message" class="border-2 border-stone-50 rounded-md p-2 w-full mt-2 bg-stone-50"><br>
+                    <button type="button" class="border-2 rounded-md mt-4 px-8 py-2 bg-slate-950 text-stone-50 hover:bg-slate-800 w-full md:w-auto" onclick="input()">Submit</button>
+                </form>
+
+                <div class="text-stone-50 bg-slate-950 w-full md:w-[40%] h-[400px] text-lg md:text-xl rounded-lg mt-8 md:mt-0" id="display">
+                    <p class="ml-2">Waktu sekarang: <span id="waktu-display"></span></p> 
+                    <p id="nama-display" class="ml-2">Nama:</p>
+                    <p id="Tanggal-display" class="ml-2">Tanggal lahir:</p> 
+                    <p id="gender-display" class="ml-2">Gender:</p> 
+                    <p id="message-display" class="ml-2">Pesan:</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="border-t-2 border-gray-300 bg-slate-950 text-center p-4 mt-10">
+        <span class="text-stone-50">@ Created by lowen</span>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
